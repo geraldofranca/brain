@@ -56,7 +56,7 @@ export class ProducerRepository extends Repository<Producer> {
     }
   }
 
-  async findProducers(
+  async findProducers (
     queryDto: FindProducersQueryDto,
   ): Promise<{ producers: Producer[]; total: number }> {
     queryDto.page = queryDto.page ? queryDto.page : 1;

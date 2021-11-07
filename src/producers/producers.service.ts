@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CpfCnpjValidator } from 'src/shared/validators/cpf-cnpj-validator';
+import { CpfCnpjValidator } from '../shared/validators/cpf-cnpj-validator';
 import { FindProducersQueryDto } from './dto/find-producers-query.dto';
 import { ProducerDto } from './dto/producer.dto';
 import { Producer } from './entities/producer.entity';
