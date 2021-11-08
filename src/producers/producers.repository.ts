@@ -11,7 +11,7 @@ export class ProducerRepository extends Repository<Producer> {
     producerDto: ProducerDto
   ): Promise<Producer> {
     const { cpf_cnpj, producer_name, farm_name, city,
-      state, total_area_farm, planting_area, vegetation_area } = producerDto;
+      state, total_area_farm, planting_area, vegetation_area, planted_culture } = producerDto;
 
     const producer = this.create();
     producer.cpf_cnpj = cpf_cnpj;
@@ -22,6 +22,7 @@ export class ProducerRepository extends Repository<Producer> {
     producer.total_area_farm = total_area_farm;
     producer.planting_area = planting_area;
     producer.vegetation_area = vegetation_area;
+    producer.planted_culture = planted_culture;
 
     try {
       return await producer.save();
@@ -34,7 +35,7 @@ export class ProducerRepository extends Repository<Producer> {
 
   async updateProducer (producerDto: ProducerDto): Promise<Producer> {
     const { cpf_cnpj, producer_name, farm_name, city,
-      state, total_area_farm, planting_area, vegetation_area } = producerDto;
+      state, total_area_farm, planting_area, vegetation_area, planted_culture } = producerDto;
 
     const producer = await this.findOne({ cpf_cnpj: producerDto.cpf_cnpj });
 
@@ -46,6 +47,7 @@ export class ProducerRepository extends Repository<Producer> {
     producer.total_area_farm = total_area_farm ? total_area_farm : producer.total_area_farm;
     producer.planting_area = planting_area ? planting_area : producer.planting_area;
     producer.vegetation_area = vegetation_area ? vegetation_area : producer.vegetation_area;
+    producer.planted_culture = planted_culture ? planted_culture : producer.planted_culture;
 
     try {
       return await producer.save();

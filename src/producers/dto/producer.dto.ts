@@ -35,4 +35,7 @@ export class ProducerDto {
 
   @IsNotEmpty({ message: 'Informe a área de vegetação em hectares' })
   vegetation_area: number;
+
+  @IsNotEmpty({ message: 'Informe pelo menos uma cultura plantada' })
+  planted_culture: object;
 }

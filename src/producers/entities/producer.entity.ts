@@ -31,6 +31,9 @@ export class Producer extends BaseEntity {
   @Column({ nullable: false, type: 'decimal', precision: 12, scale: 2 })
   vegetation_area: number;
 
+  @Column({ nullable: false, type: 'json' })
+  planted_culture: object;
+
   @CreateDateColumn()
   createdAt: Date;
 

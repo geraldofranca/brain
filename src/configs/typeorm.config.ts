@@ -9,4 +9,9 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   database: 'solucao-legal',
   entities: [__dirname + '/../**/*.entity.{js,ts}'],
   synchronize: true,
+  migrationsTableName: 'custom_migration_table',
+  migrations: ['migration/*.{js,ts}'],
+  cli: {
+      'migrationsDir': 'migration'
+  }
 };

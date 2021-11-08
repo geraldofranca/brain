@@ -47,7 +47,8 @@ describe('ProducerService', () => {
         state: 'GO',
         total_area_farm: 2.42,
         planting_area: 2.00,
-        vegetation_area: 0.4
+        vegetation_area: 0.4,
+        planted_culture: {}
       };
     });
 
